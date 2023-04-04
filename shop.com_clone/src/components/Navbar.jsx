@@ -9,8 +9,11 @@ import {
   faCartShopping,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../Context/AuthContextProvider";
+import { useContext } from "react";
 
 function Navbar() {
+  const { user, setuser } = useContext(AuthContext);
   let departmentArr = [
     "All Departments",
     "Auto",
@@ -131,7 +134,7 @@ function Navbar() {
                 icon={faCircleUser}
                 style={{ color: "#142d57" }}
               />
-              Login
+              {user == "" ? "Login" : user}
             </p>
           </Link>
           <p className="pagelist">

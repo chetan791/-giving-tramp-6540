@@ -27,7 +27,9 @@ const AuthContextProvider = (props) => {
     setUsers([...users, user]);
   };
   return (
-    <AuthContext.Provider value={{ isAuth, toggleAuth, addUser, CheckUser }}>
+    <AuthContext.Provider
+      value={{ isAuth, toggleAuth, addUser, CheckUser, user, setUser }}
+    >
       {props.children}
     </AuthContext.Provider>
   );
